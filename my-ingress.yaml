@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: my-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+    - host: kind.lswanl.ru # Замените на ваш домен или IP-адрес
+      http:
+        paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: kind # Замените на имя вашего сервиса
+                port:
+                  number: 80
+  externalIPs:
+    - 80.78.240.10
+

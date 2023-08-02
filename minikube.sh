@@ -23,6 +23,15 @@ echo "Minikube установлен."
 echo "kubectl установлен."
 sudo snap install kubectl --classic
 
+# Загрузка и установка Helm
+curl -LO "https://get.helm.sh/helm-v3.7.1-linux-amd64.tar.gz"
+tar -zxvf helm-v3.7.1-linux-amd64.tar.gz
+sudo mv linux-amd64/helm /usr/local/bin/
+rm -rf linux-amd64 helm-v3.7.1-linux-amd64.tar.gz
+
+echo "Helm установлен."
+
+
 # Перезагрузка системы, чтобы применить изменения группы docker
 echo "Перезагрузка системы..."
 sudo reboot
